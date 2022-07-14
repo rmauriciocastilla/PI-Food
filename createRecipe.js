@@ -1,5 +1,5 @@
 const {Router} = require('express');
-const {Recipe} = require('../db');
+const {Recipe} = require('./api/src/db');
 const router = Router();
 
 

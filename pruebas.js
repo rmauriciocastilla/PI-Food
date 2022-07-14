@@ -1,3 +1,5 @@
+
+
 const result =  [
     {
       "vegetarian": true,
@@ -18907,13 +18909,11 @@ const result =  [
 
 // console.log(result[0].diets)
 
-const dietsArray =[];
+let dietsArray =result.map(recipe=>recipe.id)
+console.log(dietsArray)
 
-result.forEach(recipe => recipe.diets.forEach(diet=>{
-    if(!dietsArray.find(elem=>elem===diet)){
-        dietsArray.push(diet)
-    }
-}))
+dietsArray = dietsArray.map(number => Number.isInteger(number));
+console.log(dietsArray)
 
-
+console.log(Number.isInteger("20"))
 module.exports = dietsArray;
