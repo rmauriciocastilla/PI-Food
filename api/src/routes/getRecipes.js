@@ -36,15 +36,7 @@ router.get('/', async (req,res)=>{
         if(name){
             let regExp = new RegExp(name,'gi');
             let nameRecipes = allRecipes.filter(recipe => regExp.test(recipe.name));
-            res.status(200).json(nameRecipes.length?nameRecipes:[{
-                id: "no-existe",
-                name: "No hay receta",
-                summary: "No hay resuman",
-                healthScore: 0,
-                image: "https://previews.123rf.com/images/pavlostv/pavlostv1805/pavlostv180500098/100847458-oops-404-error-page-not-found-futuristic-robot-concept-%C3%A2%E2%82%AC%E2%80%9C-stock-vector.jpg",
-                steps: "no hay coincidencias",
-                diets: ["No hay dietas"]
-            }]);
+            res.status(200).json(nameRecipes.length?nameRecipes:"No hay recetas.");
         }else{
             res.status(200).json(allRecipes.length?allRecipes:"No hay recetas.")
         }

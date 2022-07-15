@@ -8,6 +8,7 @@ export const POST_RECIPE = "POST_RECIPE";
 export const FILTER_BY_NAME = "FILTER_BY_NAME";
 export const FILTER_BY_SCORE = "FILTER_BY_SCORE";
 export const FILTER_BY_DIET = "FILTER_BY_DIET";
+export const FILTER_BY_RECIPES = "FILTER_BY_RECIPES";
 
 export const getRecipes = ()=>(dispatch)=>{
   return axios.get('http://localhost:3001/recipes')
@@ -64,3 +65,4 @@ export const filterByDiet = (diet) =>{
     payload: diet
   }
 }
+

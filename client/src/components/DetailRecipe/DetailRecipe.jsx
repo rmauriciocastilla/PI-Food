@@ -1,6 +1,6 @@
 import React,{useEffect} from "react";
 import {useDispatch,useSelector} from "react-redux";
-import {getDetails} from "../../redux/actions"
+import {getDetails} from "../../redux/actions";
 
 export default function DetailRecipe({match}){
     let id = match.params.id;
