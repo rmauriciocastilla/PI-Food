@@ -17,43 +17,79 @@ export default function Recipes(){
 
     useEffect(()=>{
         setMaximo(Math.ceil(recipesFiltered.length/9));
+        setPagina(1);
     },[recipesFiltered])
 
 
-    if(recipesFiltered.length && recipesFiltered === "No hay recetas."){
-        return (
-            <div>No hay recetas</div>
-        )
-    }
-    else if(recipesFiltered.length){
-        return (<div>
-                    <Paginacion 
-                    pagina={pagina}
-                    setPagina={setPagina}
-                    maximo={maximo}
-                    />
-                    <div className="container-recipes">
-                        {recipesFiltered.slice((pagina-1)*porPagina,(pagina-1)*porPagina+porPagina).map(recipe=>(
-                            <Recipe
-                                key={recipe.id}
-                                id={recipe.id}
-                                name={recipe.name}
-                                summary={recipe.summary}
-                                healthScore={recipe.healthScore}
-                                image={recipe.image}
-                                steps={recipe.steps}
-                                diets={recipe.diets}
-                            />
-                        ))}
+    // if(recipesFiltered.length && recipesFiltered === "No hay recetas."){
+    //     return (
+    //         <div>No hay recetas.</div>
+    //     )
+    // }
+    // else if(recipesFiltered.length){
+        // return (<div>
+        //             <Paginacion 
+        //             pagina={pagina}
+        //             setPagina={setPagina}
+        //             maximo={maximo}
+        //             />
+        //             <div className="container-recipes">
+        //                 {recipesFiltered.slice((pagina-1)*porPagina,(pagina-1)*porPagina+porPagina).map(recipe=>(
+        //                     <Recipe
+        //                         key={recipe.id}
+        //                         id={recipe.id}
+        //                         name={recipe.name}
+        //                         summary={recipe.summary}
+        //                         healthScore={recipe.healthScore}
+        //                         image={recipe.image}
+        //                         steps={recipe.steps}
+        //                         diets={recipe.diets}
+        //                     />
+        //                 ))}
                 
-                    </div>
+        //             </div>
+        //         </div>
+        //     )
+    // }else{
+    //     return(
+    //         <div>No hay recetas.</div>
+    //     )
+    // }
+    if(Array.isArray(recipesFiltered)){
+        if(recipesFiltered.length){
+            return (<div>
+                <Paginacion 
+                pagina={pagina}
+                setPagina={setPagina}
+                maximo={maximo}
+                />
+                <div className="container-recipes">
+                    {recipesFiltered.slice((pagina-1)*porPagina,(pagina-1)*porPagina+porPagina).map(recipe=>(
+                        <Recipe
+                            key={recipe.id}
+                            id={recipe.id}
+                            name={recipe.name}
+                            summary={recipe.summary}
+                            healthScore={recipe.healthScore}
+                            image={recipe.image}
+                            steps={recipe.steps}
+                            diets={recipe.diets}
+                        />
+                    ))}
+            
                 </div>
+            </div>
+        )
+        }
+        else{
+            return(
+                <div>CARGANDO RECETAS .....</div>
             )
+        }
     }else{
-        return(
-            <div>CARGANDO RECETAS</div>
+        return (
+            <div>No hay recetas.</div>
         )
     }
-
     
 }

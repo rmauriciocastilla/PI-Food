@@ -1,19 +1,22 @@
 *{
     padding: 0px;
     margin: 0px;
+    font-family: monospace;
 }
 .link{
     text-decoration: none;
     color: black;
-    width: 300px;
+    width: 30vw;
+    height: auto;
     margin: 10px;
     border: 1px solid black;
     border-radius: 10px;
+    background-color: white;
 }
 
 img{
-    width: 100%;
-    height: 200px;
+    width: 30vw;
+    height: auto;
 }
 
 .diets-container{
@@ -42,4 +45,9 @@ img{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+body{
+    background: url('background.jpg');
+    background-size: 100%;
 }
