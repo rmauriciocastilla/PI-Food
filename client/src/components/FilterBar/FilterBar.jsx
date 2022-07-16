@@ -1,6 +1,8 @@
 import React, {useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { filterByOrder, filterByScore, getDiets, filterByDiet } from "../../redux/actions";
+import './FilterBar.css'
+
 export default function FilterBar(){
 
     const dispatch = useDispatch();
@@ -27,19 +29,19 @@ export default function FilterBar(){
 
     return(
         <div>
-            <select defaultValue='Filter by Order' onChange={handleName}>
+            <select defaultValue='Filter by Order' onChange={handleName} className="filterbar-select">
                             <option disabled>Filter by Order</option>
                             <option key= 'up' value = 'up'>Upward</option>
                             <option key= 'down' value = 'down'>Descendant</option>
             </select>
 
-            <select defaultValue='Filter by Score' onChange={handleScore}>
+            <select defaultValue='Filter by Score' onChange={handleScore} className="filterbar-select">
                             <option disabled>Filter by Score</option>
                             <option key= 'scoreUp' value = 'scoreUp'>Score Upward</option>
                             <option key= 'scoreDown' value = 'scoreDown'>Score Descendant</option>
             </select>
             
-            <select defaultValue='Filter by Diets' onChange={handleDiet}>
+            <select defaultValue='Filter by Diets' onChange={handleDiet} className="filterbar-select">
                             <option disabled>Filter by Diets</option>
                             <option key='allDiets' value='allDiets'>All Diets</option>
                             {diets.length && diets.map(diet=>(

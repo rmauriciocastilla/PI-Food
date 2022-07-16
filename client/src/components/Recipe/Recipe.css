@@ -41,11 +41,7 @@ img{
     padding: 5px;
 }
 
-.container-recipes{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
+
 
 body{
     background: url('background.jpg');

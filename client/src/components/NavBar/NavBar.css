@@ -1,0 +1,73 @@
+.nav-container{
+    background-color: rgb(199, 199, 199);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 15px 0px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid black;
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.86);
+}
+
+.h1-nav{
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    font-size: 1.8em;
+    padding: 10px;
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.86);
+}
+
+.h1-nav:hover{
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}
+
+.h1-nav{
+    transition: background-color 0.45s linear 0s, color 0.45s linear 0s;
+}
+
+.form-nav{
+    display: flex;
+    background-color: white;
+    padding: 10px;
+    margin-right: 10px;
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.86);
+    border-radius: 10px;
+}
+
+
+
+.form-nav-input-text{
+    border: 0px;
+    font-size: 1.5em;
+    outline: none;
+    font-weight: bold;
+}
+
+.form-nav-button-submit{
+    background-color: white;
+    border: none;
+    height: 100%;
+}
+
+.form-nav-link-create{
+    text-decoration: none;
+    font-size: 1.5em;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.86);
+    background-color: black;
+    color: white;
+}
+
+.form-nav-link-create:hover{
+    background-color: white;
+    color: black;
+}
+
+.form-nav-link-create{
+    transition: background-color 0.45s linear 0s, color 0.45s linear 0s;
+}
