@@ -5,6 +5,8 @@
         padding: 5px 3px;
         border-radius: 10px;
         border: 2px solid black;
+        box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.86);
+
 }
 
 .filterbar-select:focus{
@@ -15,4 +17,8 @@
 .filterbar-select:hover{
         background-color: black;
         color: white;
+}
+
+.filterbar-select{
+        transition: background-color 0.45s linear 0s, color 0.45s linear 0s;
 }

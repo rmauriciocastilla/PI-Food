@@ -8,13 +8,14 @@ const router = Router();
 
 router.post('/', async (req,res)=>{
     try{
-        let {name, summary, healthScore, steps, diets} = req.body;
+        let {name, summary, healthScore, steps, image, diets} = req.body;
         if(name && summary){
             const recipe = await Recipe.create({
                 name,
                 summary,
                 healthScore,
-                steps
+                steps,
+                image
             })
             await recipe.addDiet(diets);
             res.status(200).send("La receta se ha creado correctamente");
@@ -34,7 +35,7 @@ router.get('/', async (req,res)=>{
     try{
         const allRecipes = await searchRecipes();
         if(name){
-            let regExp = new RegExp(name,'gi');
+            let regExp = new RegExp(name,'i');
             let nameRecipes = allRecipes.filter(recipe => regExp.test(recipe.name));
             res.status(200).json(nameRecipes.length?nameRecipes:"No hay recetas.");
         }else{

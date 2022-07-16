@@ -1,4 +1,5 @@
 import React from "react";
+import './Paginacion.css'
 
 export default function Paginacion({pagina,setPagina,maximo}){
     function prevButton(){
@@ -14,10 +15,10 @@ export default function Paginacion({pagina,setPagina,maximo}){
     }
 
     return(
-        <div>
-            <button onClick={prevButton}>Prev</button>
-            <span>{pagina} de {maximo}</span>
-            <button onClick={nextButton}>Next</button>
+        <div className="container-paginacion">
+            <button className="button-paginacion" onClick={prevButton}>Prev</button>
+            <p className="text-paginacion">{pagina} de {maximo}</p>
+            <button className="button-paginacion" onClick={nextButton}>Next</button>
         </div>
     )
 }

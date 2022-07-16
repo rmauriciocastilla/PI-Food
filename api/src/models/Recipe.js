@@ -25,7 +25,7 @@ module.exports = (sequelize) => {
       }
     },
     image:{
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       defaultValue: "https://www.pequerecetas.com/wp-content/uploads/2021/03/comidas-rapidas-660x550.jpg"
     },  
     steps: {
