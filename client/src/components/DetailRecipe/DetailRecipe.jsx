@@ -8,9 +8,9 @@ export default function DetailRecipe({match}){
     let id = match.params.id;
     const dispatch = useDispatch();
     const detailRecipe = useSelector(state=>state.detailRecipe);
+
     useEffect(()=>{
         dispatch(getDetails(id))
-
     },[])
 
     useEffect(()=>{
@@ -23,7 +23,9 @@ export default function DetailRecipe({match}){
             <div id = {detailRecipe.id} className="detail-container">
                 <a className="form-nav-link-create fixed" href="/home">Home</a>
                 <h1 className="detail-title">{detailRecipe.name}</h1>
-                <img className="detail-image" src={detailRecipe.image} alt={detailRecipe.name}/>
+                <div className="detail-image">
+                    <img className="detail-image" src={detailRecipe.image} alt={detailRecipe.name}/>
+                </div>
                 <div className="detail-summary">
                     <h3>Diets:</h3>
                         {detailRecipe.diets&&detailRecipe.diets.length?
@@ -59,7 +61,7 @@ export default function DetailRecipe({match}){
     else{
         return (
             <div className="container-loading">
-                <Link className="form-nav-link-create fixed" to="/home">Back to Home</Link>
+                <a className="form-nav-link-create fixed" href="/home">Back to Home</a>
                 <h2 className="container-loading-h2">❌Non-existent recipe 😖</h2>
             </div>)
     }

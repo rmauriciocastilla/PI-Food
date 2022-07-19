@@ -10,14 +10,32 @@
     width: 30vw;
     height: auto;
     margin: 10px;
-    border: 1px solid black;
-    border-radius: 10px;
     background-color: white;
+    box-shadow: 0px 0px 10px 3px #000000;
 }
 
-img{
+.link:hover{
+    transform: scale(1.02);
+}
+
+.link{
+    transition: transform 0.25s linear 0s;
+}
+
+.name-recipe{
+    margin: 5px 0px;
+    font-size: 1.8em;
+}
+
+.image-container{
     width: 30vw;
-    height: auto;
+    height: 40vh;
+}
+
+.image-container img{
+    width: 30vw;
+    height: 40vh;
+    object-fit: cover;
 }
 
 .diets-container{
@@ -25,6 +43,7 @@ img{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-size: 1.5em;
 }
 
 .diets-recipe{

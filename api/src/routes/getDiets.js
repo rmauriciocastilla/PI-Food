@@ -3,13 +3,19 @@ const { Diet} = require('../db');
 
 const router = Router();
 
-router.get('/', async (req,res)=>{
-    try {
-        let diets = await Diet.findAll();
-        res.status(200).json(diets);
-    } catch (error) {
-        res.status(500).send({msg:error.message})
-    }    
+// router.get('/', async (req,res)=>{
+//     try {
+//         let diets = await Diet.findAll();
+//         res.status(200).json(diets);
+//     } catch (error) {
+//         res.status(500).send({msg:error.message})
+//     }    
+// })
+
+router.get('/',(req,res)=>{
+    Diet.findAll()
+    .then(diets=>res.status(200).json(diets.length?diets:"No hay dietas agregadas"))
+    .catch(e=>res.status(500).json({msg:error.message}))    
 })
 
 module.exports = router

@@ -20,15 +20,15 @@ export const getRecipes = ()=>(dispatch)=>{
 export const getRecipesByName = (name)=>(dispatch)=>{
   return axios.get(`http://localhost:3001/recipes?name=${name}`)
           .then(response=>response.data)
-          .then(recipes => dispatch({type: GET_RECIPES, payload: recipes}))
-          .catch(e => console.log(e.msg))
+          .then(recipes => dispatch({type: GET_RECIPES_BY_NAME, payload: recipes}))
+          .catch(e => console.log(e))
 }
 
 export const getDetails = (id)=>(dispatch)=>{
   return axios.get(`http://localhost:3001/recipes/${id}`)
           .then(response=>response.data)
           .then(recipe => dispatch({type: GET_DETAILS, payload: recipe}))
-          .catch(e => console.log(e.msg))
+          .catch(e => console.log(e))
 }
 
 export const getDiets = ()=>(dispatch)=>{
@@ -66,3 +66,9 @@ export const filterByDiet = (diet) =>{
   }
 }
 
+export const filterByRecipes = (recipeType)=>{
+  return{
+    type: FILTER_BY_RECIPES,
+    payload: recipeType
+  }
+}

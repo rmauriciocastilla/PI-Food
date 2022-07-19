@@ -22,7 +22,7 @@ module.exports = (sequelize) => {
       validate:{
         min: 0,
         max: 100
-      }
+      },
     },
     image:{
       type: DataTypes.TEXT,
